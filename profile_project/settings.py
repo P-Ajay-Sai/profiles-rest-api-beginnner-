@@ -23,7 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '0+n5)*b$5-t2!w-o*$%dpc!rg7lb@f565omemp!r0u&2-3bg30'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+"""dont Run the server in # DEBUG:  mode it s fine u run local machine .opens u in vunerbilities"""
+
+DEBUG = bool(int(os.environ.get('DEBUG',1)))
 
 ALLOWED_HOSTS = []
 
@@ -123,3 +125,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 AUTH_USER_MODEL='profiles_api.UserProfile'
+
+STATIC_ROOT='static/'
